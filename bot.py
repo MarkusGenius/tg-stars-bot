@@ -17,13 +17,13 @@ from flask import Flask, request, jsonify
 # ==========================
 # ЗАМЕНИТЕ ЭТИ КОНСТАНТЫ
 # ==========================
-BOT_TOKEN = "PASTE_YOUR_BOT_TOKEN"
-ADMIN_ID = 123456789
-BOT_USERNAME = "your_bot_username_without_at"
+BOT_TOKEN = "8477520204:AAGoSYaKCC4_s_OWvAdcdJVY4JbrM3r3Zhk"
+ADMIN_ID = 8127196287
+BOT_USERNAME = "Zvezda_TON_bot"
 
-MERCHANT_ID = "PASTE_FREEKASSA_MERCHANT_ID"
-SECRET_WORD_1 = "PASTE_FREEKASSA_SECRET_WORD_1"  # для формирования ссылки оплаты
-SECRET_WORD_2 = "PASTE_FREEKASSA_SECRET_WORD_2"  # для проверки подписи уведомления
+MERCHANT_ID = "20064a4e69197f528804edb0ee1e57c5"
+SECRET_WORD_1 = "kk54FvRhT}*{PBm"  # для формирования ссылки оплаты
+SECRET_WORD_2 = "={XJytOz_=Jte&t"  # для проверки подписи уведомления
 
 # Фиксированная стоимость "подписки" (заказ-инициатор) — 200 ₽
 FIXED_SUBSCRIPTION_RUB = 200
