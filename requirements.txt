@@ -1,0 +1,7 @@
+aiogram==2.25.1
+Flask==3.0.3
+aiohttp==3.9.5
+yarl==1.9.4
+multidict==6.0.5
+frozenlist==1.4.1
+aiosignal==1.3.1
