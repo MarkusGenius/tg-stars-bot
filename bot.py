@@ -20,7 +20,7 @@ from flask import Flask, request, jsonify
 BOT_TOKEN = "8477520204:AAGoSYaKCC4_s_OWvAdcdJVY4JbrM3r3Zhk"
 BOT_USERNAME = "Zvezda_TON_bot"
 
-MERCHANT_ID = "e8e7b2daebe5d2cbb18479063624f0eb"
+MERCHANT_ID = "64855"
 SECRET_WORD_1 = "QsxWRRXBVDPm)PW"  # для ссылки оплаты
 SECRET_WORD_2 = "mG^+JRPX-?a/o&k"  # для подписи вебхука
 
