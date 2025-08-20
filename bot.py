@@ -20,12 +20,12 @@ from flask import Flask, request, jsonify
 BOT_TOKEN = "8477520204:AAGoSYaKCC4_s_OWvAdcdJVY4JbrM3r3Zhk"
 BOT_USERNAME = "Zvezda_TON_bot"
 
-MERCHANT_ID = "16af483fdefc22558a0744cd4759f2e6"
-SECRET_WORD_1 = "1@oe7Bfy(.9.970"  # для ссылки оплаты
-SECRET_WORD_2 = "E8,I6CXVV}VHm+4"  # для подписи вебхука
+MERCHANT_ID = "e8e7b2daebe5d2cbb18479063624f0eb"
+SECRET_WORD_1 = "QsxWRRXBVDPm)PW"  # для ссылки оплаты
+SECRET_WORD_2 = "mG^+JRPX-?a/o&k"  # для подписи вебхука
 
 SUBSCRIPTION_RUB = 200
-STAR_TO_RUB_RATE = 4.0  # 1⭐ = 4 ₽
+STAR_TO_RUB_RATE = 1.19  # 1⭐ = 4 ₽
 
 # URL воркера (обязательно для авто‑покупки)
 WORKER_URL = "http://<VPS_IP>:8000"  # пример: "http://1.2.3.4:8000"
