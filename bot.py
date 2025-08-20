@@ -17,7 +17,7 @@ from aiogram.utils import executor
 from flask import Flask, request, jsonify
 
 # ========= ЗАМЕНИ НА СВОИ =========
-BOT_TOKEN = "8477520204:AAGoSYaKCC4_s_OWvAdcdJVY4JbrM3r3Zhk"
+BOT_TOKEN = "8309652807:AAGm9d0lWcUcqonxFOgXruXpHDxE2ClUwfI"
 BOT_USERNAME = "Zvezda_TON_bot"
 
 MERCHANT_ID = "64855"
