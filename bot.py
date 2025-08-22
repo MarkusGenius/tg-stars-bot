@@ -27,7 +27,7 @@ SECRET_WORD_2 = "9Mx,aLBqz(5Vc6?"  # для подписи вебхука
 SUBSCRIPTION_RUB = 200
 STAR_TO_RUB_RATE = 1.19  # 1⭐ = 4 ₽
 
-# URL воркера (обязательно для авто‑покупки)
+# URL воркера (обязательно для авто-покупки)
 WORKER_URL = "http://<VPS_IP>:8000"  # пример: "http://1.2.3.4:8000"
 WORKER_SECRET = "CHANGE_ME_SHARED_SECRET"
 
@@ -82,7 +82,6 @@ def verify_payment_signature(data: dict) -> bool:
         return False
 
 def request_auto_purchase(order: dict) -> str:
-    """Отправляет заказ воркеру. Возвращает job_id."""
     r = requests.post(
         f"{WORKER_URL}/api/purchase",
         json={"order_id": order["order_id"], "recipient": order["recipient"], "quantity": order["stars_count"]},
@@ -96,7 +95,6 @@ def request_auto_purchase(order: dict) -> str:
     return job_id
 
 def poll_worker_until_done(order_id: str, job_id: str):
-    """Фоновая проверка статуса job у воркера. По завершении — уведомляем пользователя."""
     try:
         while True:
             time.sleep(5)
@@ -127,7 +125,6 @@ def poll_worker_until_done(order_id: str, job_id: str):
                             bot_loop
                         )
                 else:
-                    err = status.get("error", "unknown error")
                     order["status"] = "failed"
                     if bot_loop and bot_loop.is_running():
                         asyncio.run_coroutine_threadsafe(
@@ -156,7 +153,7 @@ async def notify_user_paid(order: dict) -> None:
 def webhook():
     try:
         data = request.form.to_dict()
-        logging.info(f"Free‑Kassa webhook: {data}")
+        logging.info(f"Free-Kassa webhook: {data}")
 
         if not verify_payment_signature(data):
             logging.error("Invalid signature")
@@ -179,20 +176,16 @@ def webhook():
             logging.error(f"Underpayment: {amount} < {order['total_cost']}")
             return "ERROR", 400
 
-        # помечаем оплачено
         order["status"] = "paid"
         order["paid_at"] = datetime.now().isoformat()
 
-        # уведомляем пользователя
         if bot_loop and bot_loop.is_running():
             asyncio.run_coroutine_threadsafe(notify_user_paid(order), bot_loop)
 
-        # отправляем заказ воркеру
         job_id = request_auto_purchase(order)
         order["job_id"] = job_id
         order["status"] = "purchasing"
 
-        # запускаем фоновый опрос статуса
         t = threading.Thread(target=poll_worker_until_done, args=(order_id, job_id), daemon=True)
         t.start()
 
@@ -238,7 +231,20 @@ def failed_page():
 
 @app.route("/")
 def index():
-    return jsonify({"status": "running", "service": "telegram-stars-bot", "version": "1.0"})
+    return """
+    <!doctype html>
+    <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="enot" content="ad293e60" />
+      <title>Telegram Stars Bot</title>
+    </head>
+    <body style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; text-align:center; padding:40px;">
+      <h2>🚀 Telegram Stars Bot работает</h2>
+      <p>Meta-тег для Enot установлен.</p>
+    </body>
+    </html>
+    """
 
 @app.route("/health")
 def health():
