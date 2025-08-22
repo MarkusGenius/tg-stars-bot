@@ -208,6 +208,7 @@ def success_page():
     <html><head>
       <meta charset="utf-8" />
       <meta http-equiv="refresh" content="3;url=https://t.me/{BOT_USERNAME}?start=success" />
+      <meta name="enot" content="ad293e60" />
       <title>Оплата успешна</title>
     </head>
     <body style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; text-align:center; padding:40px;">
