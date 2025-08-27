@@ -22,7 +22,7 @@ import uuid
 # =============================================================================
 
 # Telegram Bot
-BOT_TOKEN = "8309652807:AAGm9d0lWcUcqonxFOgXruXpHDxE2ClUwfI"
+BOT_TOKEN = "8477520204:AAGoSYaKCC4_s_OWvAdcdJVY4JbrM3r3Zhk"
 ADMIN_ID = 8127196287
 
 # Lava настройки (обычный кошелек)
