@@ -21,7 +21,7 @@ import uuid
 # =============================================================================
 
 # Telegram Bot
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = "8309652807:AAGm9d0lWcUcqonxFOgXruXpHDxE2ClUwfI"
 ADMIN_ID = 8127196287  # Замените на ваш Telegram ID
 
 # Lava настройки (обычный кошелек)
