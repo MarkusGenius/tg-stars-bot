@@ -32,7 +32,7 @@ LAVA_SECRET_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIwYTk1MjRjZS03
 STAR_TO_RUB_RATE = 1.2
 
 # Домен для webhook
-DOMAIN = "tg-stars-bot-production-c736.up.railway.app"
+
 
 # Порт для Flask (Railway использует переменную PORT)
 PORT = 5000
