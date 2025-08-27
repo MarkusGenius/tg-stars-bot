@@ -35,7 +35,7 @@ STAR_TO_RUB_RATE = 1.2
 DOMAIN = "http://tg-stars-bot-production-c736.up.railway.app/"
 
 # Порт для Flask
-PORT = 8080
+PORT = 5000
 
 # =============================================================================
 
