@@ -35,7 +35,7 @@ STAR_TO_RUB_RATE = 1.2
 
 
 # Порт для Flask (Railway использует переменную PORT)
-PORT = 5000
+
 
 # =============================================================================
 
@@ -925,10 +925,12 @@ async def errors_handler(update, exception):
 def run_flask():
     """Запуск Flask в отдельном потоке"""
     try:
-        logging.info(f"🚀 Запуск Flask на порту {PORT}")
-        app.run(host='0.0.0.0', port=PORT, debug=False, use_reloader=False)
+        logging.info("�� Запуск Flask...")
+        print("🌐 Flask запущен!")
+        app.run(host='0.0.0.0')  # Убираем port=PORT
     except Exception as e:
-        logging.error(f"❌ Ошибка Flask: {e}")
+        logging.error(f"❌ Ошибка запуска Flask: {e}")
+        print(f"❌ Ошибка Flask: {e}")
 
 async def test_bot_connection():
     """Тест подключения к Telegram API"""
